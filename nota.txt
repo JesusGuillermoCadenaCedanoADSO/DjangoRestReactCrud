@@ -25,3 +25,11 @@ typing_extensions==4.8.0
 tzdata==2023.3
 uritemplate==4.1.1
 urllib3==2.0.5
+
+Se instaló desde folder client:
+
+PS E:\pythonProject_django_crud_react\client>npm i react-router-dom react-hot-toast axios react-hook-form 
+
+ (venv) PS E:\pythonProject_django_crud_react\client>npm install -D tailwindcss postcss autoprefixer
+
+ (venv) PS E:\pythonProject_django_crud_react\client>npx tailwindcss init -p
