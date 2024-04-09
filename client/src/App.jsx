@@ -11,10 +11,10 @@ function App(){
       <div className='container mx-auto'>
         <Navigation/>
         <Routes>
-          <Route path="/" element={<Navigate to="/tasks"/>}></Route>
-          <Route path="/tasks" element={<TasksPage/>}></Route>
-          <Route path="/tasks-create" element={<TaskFormPage/>}></Route>
-          <Route path="/tasks/:id" element={<TaskFormPage/>}></Route>
+          <Route path="/" element={<Navigate to="/unidades"/>}></Route>
+          <Route path="/unidades" element={<TasksPage/>}></Route>
+          <Route path="/crear-unidad" element={<TaskFormPage/>}></Route>
+          <Route path="/unidades/:id" element={<TaskFormPage/>}></Route>
         </Routes>
         <Toaster/>
       </div>

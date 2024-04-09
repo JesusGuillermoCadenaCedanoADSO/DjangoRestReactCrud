@@ -1,8 +1,8 @@
 # from django.shortcuts import render
 from rest_framework import viewsets
-from .serializer import TaskSerializer
-from .models import Task
+from .serializer import UnidadSerializer
+from .models import UnidadMedicion
 # Create your views here.
-class TaskView(viewsets.ModelViewSet):
-    serializer_class = TaskSerializer
-    queryset = Task.objects.all()
+class VistaUnidad(viewsets.ModelViewSet):
+    serializer_class = UnidadSerializer
+    queryset = UnidadMedicion.objects.all()

@@ -5,13 +5,13 @@ from tasks import views
 
 # api versioning
 router = routers.DefaultRouter()
-router.register(r'tasks', views.TaskView, 'tasks')
+router.register(r'unidades', views.VistaUnidad, 'unidades')
 
 
 
 
 urlpatterns = [
     path("api/v1/", include(router.urls)),
-    path('docs/', include_docs_urls(title="Tasks API"))
+    path('docs/', include_docs_urls(title="API unidades de medicion"))
 
 ]
