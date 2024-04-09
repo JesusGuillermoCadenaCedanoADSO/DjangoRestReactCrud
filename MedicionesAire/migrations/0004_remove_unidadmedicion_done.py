@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tasks', '0003_rename_description_unidadmedicion_significado_and_more'),
+        ('MedicionesAire', '0003_rename_description_unidadmedicion_significado_and_more'),
     ]
 
     operations = [

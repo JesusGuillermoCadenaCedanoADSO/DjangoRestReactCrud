@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
-import { TasksPage } from './pages/TaskPage';
-import { TaskFormPage } from './pages/TaskFormPage';
+import { PaginaUnidad } from './pages/PaginaUnidad';
+import { FormularioUnidad } from './pages/FormularioUnidad';
 import { Navigation } from './components/Navigation';
 import {Toaster} from "react-hot-toast";
 
@@ -12,9 +12,9 @@ function App(){
         <Navigation/>
         <Routes>
           <Route path="/" element={<Navigate to="/unidades"/>}></Route>
-          <Route path="/unidades" element={<TasksPage/>}></Route>
-          <Route path="/crear-unidad" element={<TaskFormPage/>}></Route>
-          <Route path="/unidades/:id" element={<TaskFormPage/>}></Route>
+          <Route path="/unidades" element={<PaginaUnidad/>}></Route>
+          <Route path="/crear-unidad" element={<FormularioUnidad/>}></Route>
+          <Route path="/unidades/:id" element={<FormularioUnidad/>}></Route>
         </Routes>
         <Toaster/>
       </div>

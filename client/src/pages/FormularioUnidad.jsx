@@ -1,10 +1,10 @@
 import {set, useForm} from 'react-hook-form';
 import { useEffect } from 'react';
-import { createTask, deleteTask, updateTask, getTask } from '../api/tasks.api';
+import { CrearUnidad, EliminarUnidad, ActualizarUnidad, ObtenerUnidad } from '../api/unidades.api';
 import { useNavigate, useParams } from 'react-router-dom';
 import {toast} from 'react-hot-toast';
 
-export function TaskFormPage(){
+export function FormularioUnidad(){
 
     const {
         register, 
@@ -17,7 +17,7 @@ export function TaskFormPage(){
 
     const onSubmit = handleSubmit(async data=>{
         if (params.id){
-            await updateTask(params.id, data);
+            await ActualizarUnidad(params.id, data);
             toast.success('Unidad actualizada',{
                 position:"bottom-right",
                 style:{
@@ -26,7 +26,7 @@ export function TaskFormPage(){
                 }
             });
         }else{
-            await createTask(data);
+            await CrearUnidad(data);
             toast.success('Unidad creada',{
                 position:"bottom-right",
                 style:{
@@ -39,14 +39,14 @@ export function TaskFormPage(){
     })
 
     useEffect(()=>{
-        async function loadTask(){
+        async function CargarUnidad(){
             if (params.id){
-                const {data: {simbolo, significado}} = await getTask(params.id)
+                const {data: {simbolo, significado}} = await ObtenerUnidad(params.id)
                 setValue('simbolo', simbolo)
                 setValue('significado', significado)
             }
         }
-        loadTask()
+        CargarUnidad()
     },[])
      
     return(
@@ -63,7 +63,7 @@ export function TaskFormPage(){
                 ></textarea>
                 {errors.description && <span>el campo significado es requerido</span>}
                 <button
-                className='bg-indigo-500 p-3 rounded-lg block w-full mt-3'
+                className='bg-green-600 p-3 rounded-lg block w-full mt-3'
                 >Guardar</button>
             </form>
             {params.id &&
@@ -74,12 +74,12 @@ export function TaskFormPage(){
                         onClick={async ()=>{
                             const accepted = window.confirm('¿Desea eliminar la unidad?')
                             if (accepted){
-                                await deleteTask(params.id);
+                                await EliminarUnidad(params.id);
                                 toast.success('Unidad eliminada',{
                                     position:"bottom-right",
                                     style:{
                                         background:"#101010",
-                                        color:"#fff"
+                                        color:"#FF4D00"
                                     }
                                 });
                                 navigate("/unidades");
